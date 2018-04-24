@@ -33,7 +33,6 @@ class RomanizeCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 
 		for selected_text in self.view.sel():
-			print(self.view.substr(selected_text))
 			if not selected_text.empty():
 				if re.match(r'[0-9]+', self.view.substr(selected_text)):
 					to_modify = int(self.view.substr(selected_text))
