@@ -21,7 +21,7 @@ def to_romans(decimal):
 	roman = ""
 	while decimal > 0:
 		for number, symbol in special_chars:
-			if decimal >= number:
+			while decimal >= number:
 				roman += symbol
 				decimal -= number
 	return roman
