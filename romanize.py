@@ -42,14 +42,11 @@ def from_romans(str):
 
 def to_romans(decimal):
 
-	if decimal <= 1000000000:
-		roman = ""
-		for number, symbol in special_chars:
-			while decimal >= number:
-				roman += symbol
-				decimal -= number
-	else:
-		roman = decimal
+	roman = ""
+	for number, symbol in special_chars:
+		while decimal >= number:
+			roman += symbol
+			decimal -= number
 	return roman
 
 class RomanizeCommand(sublime_plugin.TextCommand):
