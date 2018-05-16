@@ -6,13 +6,14 @@ Sublime plugin that turns selected numbers (decimals) to romans or romans to dec
 This plugin takes every selection in the view and gives you a choice, transform the decimal numbers to romans or vice-versa.
 Also, to romans and from romans functions are available only when text is selected
 
-![to_romans](https://user-images.githubusercontent.com/38569768/40120876-ebc20d24-5928-11e8-864a-b2b45e7eccad.png)
+
+![to_romans](https://user-images.githubusercontent.com/38569768/40134208-68e09908-594a-11e8-99d0-6445b65bb1cf.png)
 
 
 ![is_romans](https://user-images.githubusercontent.com/38569768/40120895-f3db5650-5928-11e8-92c5-4f9f081278ec.png)
 
 
-![from_romans](https://user-images.githubusercontent.com/38569768/40120908-f9c61d20-5928-11e8-8690-bd9afca66983.png)
+![from_romans](https://user-images.githubusercontent.com/38569768/40134203-65da254e-594a-11e8-95ab-6adec7cfbf57.png)
 
 
 ![is_decimals](https://user-images.githubusercontent.com/38569768/40120919-fe8c3ad8-5928-11e8-9ef9-b552385722c9.png)
