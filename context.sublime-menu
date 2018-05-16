@@ -1,7 +1,17 @@
 [
-{
-    "id" : "Romanize",
-    "caption" : "Romanize",
-    "command" : "romanize"
-}
+	{
+	    "id" : "Romanize",
+	    "caption" : "Romanize",
+	    "children":
+		[
+			{
+			"caption": "To Romans",
+			"command": "romanize"
+			},
+			{
+			"caption": "From Romans",
+			"command": "to_decimal"
+			}
+		]
+	}
 ]
