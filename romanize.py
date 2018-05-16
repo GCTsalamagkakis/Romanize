@@ -53,35 +53,39 @@ def to_romans(decimal):
 	return roman
 
 class RomanizeCommand(sublime_plugin.TextCommand):
+    def get_number_selections(self):
+        for region in self.view.sel():
+            if region.empty(): break
 
-	def is_enabled(self, lint=False, integration=False, kill=False):
+            text = self.view.substr(region)
+            if not re.match(r'[0-9]+', text): break
 
-		if self.view.has_non_empty_selection_region():
-			return True
-		return False
+            number = int(text)
+            if int(text) > 1000000000: break
+            
+            yield (region, int(text))
+
+    def is_enabled(self):
+        return any(self.get_number_selections())
+    
+    def run(self, edit):
+        for region, number in self.get_number_selections():
+            self.view.replace(edit, region, to_romans(number))
+
+class ToDecimalCommand(sublime_plugin.TextCommand):
 	
+	def get_number_selections(self):
+		for region in self.view.sel():
+			if region.empty(): break
+
+			text = self.view.substr(region)
+			if not re.match(r'[mcdlxviMCDLXVI]+', text): break
+            
+			yield (region, text)
+
+	def is_enabled(self):
+		return any(self.get_number_selections())
+    
 	def run(self, edit):
-
-		for selected_text in self.view.sel():
-			if not selected_text.empty():
-				if re.match(r'[0-9]+', self.view.substr(selected_text)):
-					to_modify = int(self.view.substr(selected_text))
-					roman = to_romans(to_modify)
-					self.view.replace(edit, selected_text, roman)
-
-class To_DecimalCommand(sublime_plugin.TextCommand):
-	
-	def is_enabled(self, lint=False, integration=False, kill=False):
-
-		if self.view.has_non_empty_selection_region():
-			return True
-		return False
-
-	def run(self, edit):
-
-		for selected_text in self.view.sel():
-			if not selected_text.empty():
-				if re.match(r'[mcdlxviMCDLXVI]+', self.view.substr(selected_text)):
-					to_modify = self.view.substr(selected_text)
-					decimal = from_romans(to_modify)
-					self.view.replace(edit, selected_text, str(decimal))
+		for region, number in self.get_number_selections():
+			self.view.replace(edit, region, str(from_romans(number)))
