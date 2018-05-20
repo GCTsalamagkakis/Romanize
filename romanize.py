@@ -9,7 +9,7 @@ class RomanizeCommand(sublime_plugin.TextCommand):
             if region.empty(): break
 
             text = self.view.substr(region)
-            if not re.match(r'[0-9]+', text): break
+            if not re.match(r'[1-9]+', text): break
 
             number = int(text)
             if int(text) > 1000000000: break
