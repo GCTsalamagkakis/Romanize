@@ -1,6 +1,7 @@
 [
     { 
     	"caption": "Edit: To Romans",
+	"command": "romanize",
     	"children":
 		[
 			{
