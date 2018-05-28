@@ -1,17 +1,14 @@
 [
 	{
 	    "caption" : "Edit: Romanize",
-	    "command" : "children"
-	    "children":
-		[
-			{
-			"caption": "To Romans",
-			"command": "romanize"
-			},
-			{
-			"caption": "From Romans",
-			"command": "to_decimal"
-			}
-		]
+	    "command" : "romanize"
+	},
+	{
+	    "caption" : "Edit: To Romans",
+	    "command" : "romanize"
+	},
+	{
+	    "caption" : "Edit: From Romans",
+	    "command" : "to_decimal"
 	}
 ]
