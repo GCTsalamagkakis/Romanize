@@ -1,7 +1,6 @@
 [
 	{
 	    "caption" : "Edit: Romanize",
-	    "command": "romanize"
 	    "children":
 		[
 			{
