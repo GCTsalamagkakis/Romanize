@@ -1,8 +1,7 @@
 [
-    { 
-    	"caption": "Edit: To Romans",
-	"command": "romanize",
-    	"children":
+	{
+	    "caption" : "Edit: Romanize",
+	    "children":
 		[
 			{
 			"caption": "To Romans",
@@ -14,5 +13,4 @@
 			}
 		]
 	}
-
 ]
